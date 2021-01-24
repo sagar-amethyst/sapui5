@@ -32,7 +32,7 @@
 			"id": "app"
 		},
 		"models": {
-			"product": {
+			"": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "sample.json"
 			}
