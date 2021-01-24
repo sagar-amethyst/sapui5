@@ -1,7 +1,44 @@
-<mvc:View
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="com.sagar.cbsapp.controller.App">
-	<Text text="Views and Controllers in UI5 (XML View)"/>
-	<Button text="A simple Button" press=".onButtonPressed"/>
+<mvc:View xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" controllerName="com.sagar.cbsapp.controller.App">
+	<VBox>
+		<Title text="Product List" titleStyle="H1"/>
+		<Title text="Property binding" titleStyle="H2"/>
+		<Text text="{path: 'product>/SayHello' }"/>
+		<Text text="{product>/SayHello}"/>
+		<Title text="Element binding" titleStyle="H2"/>
+		<VBox binding="{product>/Supplier}">
+			<Text text="Supplier name: {product>Name}"/>
+			<Text text="Supplier address: {product>Address}"/>
+		</VBox>
+		<Title text="Aggregation binding" titleStyle="H2"/>
+		<List items="{product>/Products}">
+			<StandardListItem title="{product>Name}" description="{product>Price}"/>
+		</List>
+	</VBox>
 </mvc:View>
+
+
+
+
+
+
+
+<!-- Default json model which mean there is no name for model check in manifest.json line number: -->
+<!-- <mvc:View xmlns="sap.m" 
+	xmlns:mvc="sap.ui.core.mvc" controllerName="com.sagar.cbsapp.controller.App">
+	<VBox>
+		<Title text="Product List" titleStyle="H1"/>
+		<Title text="Property binding" titleStyle="H2"/>
+		<Text text="{path: '/SayHello' }"/>
+		<Text text="{/SayHello}"/>
+		<Title text="Element binding" titleStyle="H2"/>
+		<VBox binding="{/Supplier}">
+			<Text text="Supplier name: {Name}"/>
+			<Text text="Supplier address: {Address}"/>
+		</VBox>
+		<Title text="Aggregation binding" titleStyle="H2"/>
+		<List items="{/Products}">
+			<StandardListItem title="{Name}" description="{Price}"/>
+		</List>
+	</VBox>
+</mvc:View> -->

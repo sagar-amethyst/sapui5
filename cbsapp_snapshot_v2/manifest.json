@@ -1,0 +1,41 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.sagar.cbsapp",
+		"type": "application",
+		"title": "Product List",
+		"description": "Manage product in UI5 app",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.70.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"rootView": {
+			"viewName": "com.sagar.cbsapp.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"models": {
+			"product": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "sample.json"
+			}
+		}
+	}
+}

@@ -8,13 +8,21 @@
 
     <!-- load UI5 core library -->
     <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-        data-sap-ui-language="en" data-sap-ui-libs="sap.m" data-sap-ui-resourceroots='{
+        data-sap-ui-language="en" data-sap-ui-theme="sap_fiori_3" data-sap-ui-compatVersion="edge"
+        data-sap-ui-resourceroots='{
             "com.sagar.cbsapp": "./"
-        }' data-sap-ui-oninit="module:com/sagar/cbsapp/component">
+        }' data-sap-ui-oninit="module:sap/ui/core/ComponentSupport">
         </script>
 </head>
 
-<body class="sapUiBody" id="content">
+<body class="sapUiBody">
+    <!-- 
+        ComponentSupport.run() will select element 
+        with attribute 'data-sap-ui-component'
+        to render UI area -->
+    <div data-sap-ui-component data-name="com.sagar.cbsapp" data-id="container"
+        data-settings='{"id" : "ProductListApp"}'>
+    </div>
 </body>
 
 </html>

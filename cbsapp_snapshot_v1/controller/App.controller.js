@@ -29,7 +29,7 @@ sap.ui.define([
 
         // handle button press event
         onButtonPressed: function(oEvent){
-            alert("Button pressed");
+            alert("Button pressed1");
         }
 
     });

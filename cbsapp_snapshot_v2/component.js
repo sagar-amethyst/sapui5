@@ -1,21 +1,19 @@
 sap.ui.define([
-    "sap/ui/core/mvc/XMLView",
-    "sap/ui/core/mvc/JSView"
-], function (XMLView, JSView) {
+    "sap/ui/core/UIComponent"
+], function (UIComponent) {
     "use strict";
 
-    // create XML view
-    XMLView.create({
-        viewName: "com.sagar.cbsapp.view.App"
-    }).then(function (oView) {
-        oView.placeAt("content");
+    return UIComponent.extend("com.sagar.cbsapp.Component", {
+        // load the manifest.json app descriptor file
+        metadata: {
+            manifest: "json"
+        },
+
+
+        init : function () {
+			// call the init function of the parent
+            UIComponent.prototype.init.apply(this, arguments);
+		}
+
     });
-
-    // create JS view
-    // JSView.create({
-    //     viewName: "demo.ui5.ProductListApp.App"
-    // }).then(function (oView) {
-    //     oView.placeAt("content");
-    // })
-
-})
+});
